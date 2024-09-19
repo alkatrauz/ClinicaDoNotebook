@@ -2,7 +2,7 @@
 
 
 :root{
-    --cor-background: #a1a1a1;
+    --cor-background: #ffffff00;
 }
 
 * {
@@ -28,6 +28,7 @@ main, aside, footer {
 body {
     flex: 1 1 200px;
     display: block;
+    background-color: #f9f9f9;
 }
 
 main {

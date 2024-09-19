@@ -6,18 +6,66 @@
     
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/media-responsivo.css">
-    <link rel="stylesheet" href="css/menu-header.css">
-    
+
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <link rel="shortcut icon" href="favicon.ico">
 </head>
 <body>
-    <header>
+    <div class="top-bar">
+        <h1>Consertos de Notebooks!!</h1>
+    </div>
+    
+    <header class="main-header">
+        <div class="logo">
+            <a href="#inicio">
+                <img src="images/logo.png" alt="logo">
+                
+            </a>
+            </div>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Barra de Pesquisa">
+            <button type="submit">Buscar</button>
+        </div>
+
+        <div class="header-icons">
+            <a href="#login" class="login">Login</a>
+            <a href="#carrinho" class="cart">
+                <img src="images/carrinho.png" alt="carrinho">
+                <span>carrinho</span>
+            </a>
+        </div>
+
+        <div class="hamburger-menu" id="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <nav class="navbar">
+        <input type="checkbox" id="check">
+        <label for="check" class="botao-menu">
+            <i class="fa fa-bars"></i>
+        </label>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#produtos">Produtos</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#contato">Contato</a></li>
+            <li><a href="#sobre">Sobre nos</a></li>
+        </ul>
+
+    </nav>
+
+        <!--a
         <div id="menu-logo">
             <div style="width: 100px;">
-                <img src="logo.png" alt="logo" style="width: 100%;">
+                <img src="images/logo.png" alt="logo" style="width: 100%;">
             </div>
         
             <div class="titulo">
@@ -53,12 +101,13 @@
                 </ul>
             </nav>
         </div>
-    </header>
+        -->
+
     
     <main>
-        <section>
-            <h1>manuntecao</h1>
-        </section>
+        <div class="conteudo">
+            <p>conteudo principal</p>
+        </div>
     </main>
     
     <aside>
@@ -75,9 +124,28 @@
         <label>© 2024 CdN. Todos os direitos reservados for Gaona</label>
     </footer>
     
-    <a href="https://wa.me/554498682964?text=Olá vim pelo site">
-        <img src="assets/whatsapp (2).png" width="40px" height="40px" id="whats">
-    </a>
+
+    
+
+        <!--começo-do-whatsap-->
+    <style>
+        .whatsapp {
+            position: fixed;
+            bottom: 3%;
+            right: 1%;
+            padding: 10px;
+            z-index: 10000000;
+        }
+    </style>
+    <div>
+        <a href="https://wa.me/554498682964?text=Olá, Clinica Do Notebook" target="_blank">
+            <img src="images/whatsapp.png" width="40px" height="40px" id="whatsapp">
+        </a>
+    </div>
+        <!--fim-do-whatsap-->
+
+
+
     <script src="js/script.js"></script>
 </body>
 </html>

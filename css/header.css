@@ -1,0 +1,192 @@
+:root{
+    --azul-marinho:#62b1e6;
+    --cor-topbar: #190b9e;
+    --cor-header:#000000;
+}
+
+
+/*barra superior*/
+
+.top-bar{
+    background-color: var(--cor-topbar);
+    color: #ecf0f1;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+/*barra superior*/
+
+/*imagens*/
+
+.cart img{
+    width: 50px;
+    height: 50px;
+    margin-right: 5px;
+}
+
+.logo img{
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+}
+/*imagens*/
+
+
+/*header principal*/
+
+.main-header{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--cor-header);
+    justify-content: space-between;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+
+
+.search-bar{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar input{
+    padding: 10px;
+    border: 2px solid #548baf;
+    border-radius: 25px;
+    padding-left: 20px;
+    width: 60%;
+}
+
+.search-bar input:focus{
+    border-color:var(--azul-marinho);
+}
+
+.search-bar button{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    margin-left: 10px;
+    color: white;
+    background-color: #2980b9;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover{
+    background-color: #3498db;
+}
+
+.header-icons{
+    display: flex;
+    align-items: center;
+}
+
+.login, .cart{
+    display:flex;
+    align-items: center;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-left: 20px;
+    padding: 10px;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.login:hover, .cart:hover{
+    border-color: #2980b9;
+    color: #2980b9;
+}
+
+/*header principal*/
+
+
+/*navbars*/
+.navbar{
+    background-color: #2c3e50;
+    padding: 15px;
+}
+
+.navbar ul{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 50px;
+}
+
+.navbar ul li{
+    font-size: 1.2rem;
+}
+
+.navbar ul li a{
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    background-color: #34495e;
+    transition: background-color 0.3 ease;
+}
+
+.navbar ul li a:hover{
+    background-color: var(--azul-marinho);
+}
+
+/*menu*/
+/* menu hamburguer*/
+input[type="checkbox"]:checked ~ ul {
+    display: block;
+}
+
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.hamburger-menu span{
+    display: block;
+    height: 3px;
+    background-color: #2c3e50;
+    border-radius: 5px;
+}
+
+#menu-logo {
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    width: 100%;
+    height: 80px;
+    align-items: center;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.botao-menu {
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 0;
+    cursor: pointer;
+    margin-right: 40px;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+/*menu*/
