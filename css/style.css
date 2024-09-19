@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+:root{
+    --cor-background: #a1a1a1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: inherit;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+main, aside, footer {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 3px;
+    background: var(--cor-background);
+}
+
+body {
+    flex: 1 1 200px;
+    display: block;
+}
+
+main {
+    flex: 20 1 500px;
+    height: calc(100vh - 224px);
+}
+
+aside {
+    flex: 1 1 200px;
+}
+
+footer {
+    flex: 1 1 100vw;
+    background-color: black;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 12px;
+}
+

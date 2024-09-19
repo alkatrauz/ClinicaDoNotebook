@@ -1,0 +1,19 @@
+@media only screen and (max-widht: 923px){
+    main{
+        height: calc(100vh - 330px);
+    }
+
+    aside {
+        flex: 1 1 100vh;
+        height: 100px;
+    }
+}
+
+@media only screen and (max-widht: 757px){
+    nav {
+        height: 100px;
+    }
+    main {
+        height: calc(100vh - 436px);
+    }
+}
