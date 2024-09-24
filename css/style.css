@@ -25,13 +25,13 @@ main, aside, footer {
     background: var(--cor-background);
 }
 
-body {
+/*body {
     flex: 1 1 200px;
     display: block;
     background-color: #f9f9f9;
 }
 
-/*main {
+main {
     flex: 20 1 500px;
     height: calc(100vh - 224px);
 }
