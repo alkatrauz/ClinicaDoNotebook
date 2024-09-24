@@ -2,7 +2,7 @@
 
 
 :root{
-    --cor-background: #ffffff00;
+    --cor-background: #ffffff;
 }
 
 * {
@@ -31,7 +31,7 @@ body {
     background-color: #f9f9f9;
 }
 
-main {
+/*main {
     flex: 20 1 500px;
     height: calc(100vh - 224px);
 }
@@ -39,9 +39,8 @@ main {
 aside {
     flex: 1 1 200px;
 }
-
+*/
 footer {
-    flex: 1 1 100vw;
     background-color: black;
     width: 100%;
     height: 50px;

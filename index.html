@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/media-responsivo.css">
 
 
@@ -54,61 +55,101 @@
         </label>
         <ul>
             <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#produtos">Produtos</a></li>
+            <li><a href="#produtos">Produtos00</a></li>
             <li><a href="#servicos">Serviços</a></li>
             <li><a href="#contato">Contato</a></li>
             <li><a href="#sobre">Sobre nos</a></li>
         </ul>
 
     </nav>
-
-        <!--a
-        <div id="menu-logo">
-            <div style="width: 100px;">
-                <img src="images/logo.png" alt="logo" style="width: 100%;">
-            </div>
-        
-            <div class="titulo">
-                    <h1>
-                        Clinica Do Notebook
-                    </h1>
-            </div>
-        
-            
-        
-            <nav>
-                <input type="checkbox" id="check">
-                <label for="check" class="botao-menu">
-                    <i class="fa fa-bars"></i>
-                </label>
-
-                <ul>
-                    <li>
-                        <a href="home">Inicio</a>
-                    </li>
-                    <li>
-                        <a href="produtos">Produtos</a>
-                    </li>
-                    <li>
-                        <a href="servicos">Serviços</a>
-                    </li>
-                    <li>
-                        <a href="contato">Contato</a>
-                    </li>
-                    <li>
-                        <a href="sobre">Sobre</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-        -->
-
+    
+    
+    
+    
     
     <main>
-        <div class="conteudo">
-            <p>conteudo principal</p>
-        </div>
+        <!-- Seção de Apresentação -->
+        <section id="apresentacao">
+            <div class="logo">
+                <img src="images/logo-grande.png" alt="Logo da Clínica Do Notebook">
+            </div>
+            <div class="texto-apresentacao">
+                <h1>Bem-vindo à Clínica Do Notebook</h1>
+                <p>
+                    Somos especializados em consertos de notebooks, manutenção preventiva, upgrades e vendas de peças. 
+                    Nossa missão é garantir que seu notebook funcione perfeitamente!
+                </p>
+            </div>
+        </section>
+    
+        <!-- Seção de Serviços -->
+        <section id="servicos">
+            <h2>Nossos Serviços</h2>
+            <div class="servicos-container">
+                <div class="servico-item">
+                    <img src="images/conserto.png" alt="Conserto de Notebooks">
+                    <h3>Conserto de Notebooks</h3>
+                    <p>Reparamos notebooks de todas as marcas com rapidez e garantia.</p>
+                </div>
+                <div class="servico-item">
+                    <img src="images/upgrade.png" alt="Upgrade de Hardware">
+                    <h3>Upgrade de Hardware</h3>
+                    <p>Melhoramos o desempenho do seu notebook com novos componentes.</p>
+                </div>
+                <div class="servico-item">
+                    <img src="images/vendas.png" alt="Vendas de Peças">
+                    <h3>Vendas de Peças</h3>
+                    <p>Oferecemos peças originais e de qualidade para substituições rápidas.</p>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Seção de Depoimentos -->
+        <section id="depoimentos">
+            <h2>O que nossos clientes dizem</h2>
+            <div class="depoimento">
+                <p>"Levei meu notebook e em menos de 2 dias já estava funcionando perfeitamente! Excelente atendimento."</p>
+                <span>- João Silva</span>
+            </div>
+            <div class="depoimento">
+                <p>"Fiz um upgrade no meu notebook e ele ficou muito mais rápido! Recomendo a todos."</p>
+                <span>- Maria Oliveira</span>
+            </div>
+        </section>
+    
+        <!-- Seção de Contato -->
+        <section id="contato">
+            <h2>Entre em Contato</h2>
+            <form action="#" method="POST">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" required>
+    
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+    
+                <label for="mensagem">Mensagem</label>
+                <textarea id="mensagem" name="mensagem" required></textarea>
+    
+                <button type="submit">Enviar Mensagem</button>
+            </form>
+            <div class="localizacao">
+                <h3>Onde estamos</h3>
+                <iframe src="link-do-mapa" width="100%" height="300px"></iframe>
+            </div>
+        </section>
     </main>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     <aside>
         <section id="sobre">
@@ -118,7 +159,6 @@
             </div>
         </section>
     </aside>
-    
     <footer>
         
         <label>© 2024 CdN. Todos os direitos reservados for Gaona</label>
@@ -129,7 +169,7 @@
 
         <!--começo-do-whatsap-->
     <style>
-        .whatsapp {
+        .whatsapp img{
             position: fixed;
             bottom: 3%;
             right: 1%;

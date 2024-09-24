@@ -1,0 +1,93 @@
+/* Seção de Apresentação */
+#apresentacao {
+    background-color: #1f1f1f;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+#apresentacao .logo img {
+    width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+#apresentacao h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+#apresentacao p {
+    font-size: 1.2rem;
+    margin-top: 0;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Seção de Serviços */
+#servicos {
+    background-color: #ecf0f1;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#servicos h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.servicos-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.servico-item {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+    width: 280px;
+    padding: 20px;
+    margin: 10px;
+    transition: transform 0.3s ease;
+}
+
+.servico-item img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+}
+
+.servico-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #2980b9;
+}
+
+.servico-item p {
+    font-size: 1rem;
+    color: #7f8c8d;
+}
+
+.servico-item:hover {
+    transform: translateY(-10px);
+}
+
+/* Seção de Depoimentos */
+#depoimentos {
+    background-color: #1f1f1f;
+    color: #ecf0f1;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#depoimentos h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.depoimento {
+    background-color: #34495e;
+}
