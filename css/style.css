@@ -18,14 +18,14 @@ html{
     scroll-behavior: smooth;
 }
 
-main, aside, footer {
+/*main, aside, footer {
     display: flex;
     flex-wrap: wrap;
     margin: 3px;
     background: var(--cor-background);
 }
 
-/*body {
+body {
     flex: 1 1 200px;
     display: block;
     background-color: #f9f9f9;
