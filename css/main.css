@@ -7,6 +7,7 @@
 }
 
 #apresentacao .logo img {
+    align-items: center;
     width: 150px;
     height: auto;
     margin-bottom: 20px;
@@ -90,4 +91,67 @@
 
 .depoimento {
     background-color: #34495e;
+}
+
+#contato {
+    background-color: #ffffff; /* Cor de fundo do formulário */
+    padding: 40px; /* Espaçamento interno */
+    border-radius: 8px; /* Bordas arredondadas */
+    max-width: 600px; /* Largura máxima da seção */
+    margin: 20px auto; /* Centraliza a seção */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+#contato h2 {
+    text-align: center; /* Centraliza o título */
+    margin-bottom: 20px; /* Espaçamento abaixo do título */
+    color: #333; /* Cor do texto */
+}
+
+#contato label {
+    display: block; /* Cada label ocupa uma linha */
+    margin: 10px 0 5px; /* Margem para espaçar os elementos */
+    font-weight: bold; /* Texto em negrito */
+    color: #333; /* Cor do texto */
+}
+
+#contato input, 
+#contato textarea {
+    width: 100%; /* Largura total do campo */
+    padding: 10px; /* Espaçamento interno */
+    border: 1px solid #ccc; /* Borda cinza */
+    border-radius: 4px; /* Bordas arredondadas */
+    margin-bottom: 15px; /* Margem abaixo dos campos */
+    font-size: 16px; /* Tamanho da fonte */
+}
+
+#contato input:focus, 
+#contato textarea:focus {
+    border-color: #007bff; /* Cor da borda ao focar */
+    outline: none; /* Remove a borda padrão */
+}
+
+#contato button {
+    background-color: #007bff; /* Cor de fundo do botão */
+    color: white; /* Cor do texto */
+    padding: 10px 20px; /* Espaçamento interno */
+    border: none; /* Remove a borda */
+    border-radius: 4px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor de ponteiro ao passar */
+    font-size: 16px; /* Tamanho da fonte */
+    transition: background-color 0.3s; /* Transição suave para a cor de fundo */
+}
+
+#contato button:hover {
+    background-color: #0056b3; /* Cor de fundo ao passar o mouse */
+}
+
+/* Estilo do mapa */
+#mapa {
+    margin: 20px auto; /* Margem em cima e embaixo */
+    text-align: center; /* Centraliza o conteúdo do mapa */
+}
+
+#mapa h2 {
+    color: #333; /* Cor do texto do título do mapa */
 }
