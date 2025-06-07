@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato | Clínica do Notebook</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/554599999999" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="logo">
+                <a href="index.html"><img src="assets/logo-clinica-notebook.png" alt="Clínica do Notebook"></a>
+            </div>
+            
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
+            
+            <div class="nav-overlay" id="navOverlay"></div>
+            
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a href="orcamento.html">Orçamento</a></li>
+                    <li><a href="contato.html" class="active">Contato</a></li>
+                    <li><a href="tel:+554599999999" class="cta-button"><i class="fas fa-phone"></i> Ligar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Fale Conosco</h1>
+            <p>Estamos aqui para ajudar com seu notebook</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>Informações de Contato</h2>
+                    
+                    <div class="contact-method">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Endereço</h3>
+                            <p>Rua da Tecnologia, 123 - Centro<br>Foz do Iguaçu - PR</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Telefone</h3>
+                            <p>(45) 9999-9999</p>
+                            <a href="tel:+554599999999" class="btn-small">Ligar Agora</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <h3>WhatsApp</h3>
+                            <p>(45) 99999-9999</p>
+                            <a href="https://wa.me/554599999999" class="btn-small">Enviar Mensagem</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <i class="far fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>contato@clinicadonotebook.com.br</p>
+                            <a href="mailto:contato@clinicadonotebook.com.br" class="btn-small">Enviar Email</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <i class="far fa-clock"></i>
+                        <div>
+                            <h3>Horário de Funcionamento</h3>
+                            <p>Segunda a Sexta: 9h às 18h<br>Sábado: 9h às 13h<br>Domingo: Fechado</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h2>Envie uma Mensagem</h2>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nome Completo</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Telefone</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Assunto</label>
+                            <select id="subject" name="subject">
+                                <option value="duvida">Dúvida</option>
+                                <option value="orcamento">Orçamento</option>
+                                <option value="reclamacao">Reclamação</option>
+                                <option value="elogio">Elogio</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Mensagem</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <h2 class="section-title">Onde Estamos</h2>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3601.102911149034!2d-54.58878872433848!3d-25.50197763332952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f690eb0c6e0001%3A0x8a7b5fa7e7a1a3f4!2sRua%20da%20Tecnologia%2C%20123%20-%20Centro%2C%20Foz%20do%20Igua%C3%A7u%20-%20PR!5e0!3m2!1spt-BR!2sbr!4v1620000000000!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Banner -->
+    <div class="emergency-banner">
+        <div class="container">
+            <i class="fas fa-bolt"></i>
+            <span>EMERGÊNCIA? Conserto em até 2 horas para problemas críticos!</span>
+            <a href="tel:+554599999999" class="btn-emergency">Ligue Agora!</a>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Dúvidas Frequentes</h2>
+            <div class="faq-item">
+                <button class="faq-question">Preciso agendar para levar meu notebook?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Não é necessário agendamento, atendemos por ordem de chegada. Porém, para garantir menor tempo de espera, recomendamos agendar pelo WhatsApp.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Vocês fazem atendimento a domicílio?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Sim, para serviços específicos oferecemos atendimento em domicílio com taxa adicional. Consulte valores pelo WhatsApp.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Qual o prazo para resposta de emails?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Respondemos todos os emails em até 24 horas úteis. Para urgências, recomendamos contato por telefone ou WhatsApp.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <img src="assets/logo-clinica-notebook-white.png" alt="Clínica do Notebook" class="footer-logo">
+                    <p>Assistência técnica especializada em notebooks desde 2010. Conserto rápido com garantia e peças originais.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="servicos.html">Serviços</a></li>
+                        <li><a href="orcamento.html">Orçamento</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Rua da Tecnologia, 123 - Centro</p>
+                    <p><i class="fas fa-phone"></i> (45) 9999-9999</p>
+                    <p><i class="far fa-envelope"></i> contato@clinicadonotebook.com.br</p>
+                    <p><i class="far fa-clock"></i> Seg-Sex: 9h-18h | Sáb: 9h-13h</p>
+                </

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orçamento | Clínica do Notebook</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/estimate.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/554599999999" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="logo">
+                <a href="index.html"><img src="assets/logo-clinica-notebook.png" alt="Clínica do Notebook"></a>
+            </div>
+            
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
+            
+            <div class="nav-overlay" id="navOverlay"></div>
+            
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a href="orcamento.html" class="active">Orçamento</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="tel:+554599999999" class="cta-button"><i class="fas fa-phone"></i> Ligar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Solicite seu Orçamento</h1>
+            <p>Preencha o formulário abaixo e receba um diagnóstico gratuito</p>
+        </div>
+    </section>
+
+    <!-- Estimate Form -->
+    <section class="estimate-form">
+        <div class="container">
+            <div class="form-container">
+                <form id="estimateForm">
+                    <div class="form-group">
+                        <label for="name">Nome Completo</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Telefone</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="device">Marca e Modelo do Notebook</label>
+                        <input type="text" id="device" name="device" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="problem">Descreva o Problema</label>
+                        <textarea id="problem" name="problem" rows="5" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service">Tipo de Serviço Necessário</label>
+                        <select id="service" name="service">
+                            <option value="">Selecione...</option>
+                            <option value="troca-tela">Troca de Tela</option>
+                            <option value="troca-teclado">Troca de Teclado</option>
+                            <option value="placa-mae">Reparo na Placa-Mãe</option>
+                            <option value="limpeza">Limpeza Interna</option>
+                            <option value="virus">Remoção de Vírus</option>
+                            <option value="formatacao">Formatação/Instalação</option>
+                            <option value="dados">Recuperação de Dados</option>
+                            <option value="upgrade">Upgrade de Memória/SSD</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="urgency">Urgência</label>
+                        <select id="urgency" name="urgency">
+                            <option value="normal">Normal (2-3 dias)</option>
+                            <option value="urgente">Urgente (24 horas)</option>
+                            <option value="emergencia">Emergência (mesmo dia)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="backup" name="backup">
+                        <label for="backup">Preciso de backup dos meus dados</label>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary">Enviar Solicitação</button>
+                </form>
+                
+                <div class="form-info">
+                    <h3>Como funciona?</h3>
+                    <ol class="process-steps">
+                        <li>Preencha o formulário com detalhes do problema</li>
+                        <li>Nossa equipe analisa e envia um orçamento em até 1h útil</li>
+                        <li>Você aprova e agendamos o reparo</li>
+                        <li>Seu notebook é reparado com garantia</li>
+                    </ol>
+                    
+                    <div class="contact-methods">
+                        <h3>Prefere falar direto?</h3>
+                        <a href="tel:+554599999999" class="contact-method">
+                            <i class="fas fa-phone"></i>
+                            <span>(45) 9999-9999</span>
+                        </a>
+                        <a href="https://wa.me/554599999999" class="contact-method">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>WhatsApp</span>
+                        </a>
+                        <a href="contato.html" class="contact-method">
+                            <i class="far fa-envelope"></i>
+                            <span>contato@clinicadonotebook.com.br</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Dúvidas sobre Orçamento</h2>
+            <div class="faq-item">
+                <button class="faq-question">Quanto custa o diagnóstico?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>O diagnóstico é <strong>gratuito</strong> e leva em média 1 hora útil. Caso precise abrir o notebook para análise mais detalhada, informaremos antes qualquer custo adicional.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Posso levar meu notebook sem agendamento?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Sim, atendemos por ordem de chegada, mas recomendamos agendar pelo WhatsApp para evitar filas.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Quais as formas de pagamento?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Aceitamos dinheiro, PIX, cartões de débito e crédito (até 3x sem juros). O pagamento é realizado apenas após a aprovação do orçamento e conclusão do serviço.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <img src="assets/logo-clinica-notebook-white.png" alt="Clínica do Notebook" class="footer-logo">
+                    <p>Assistência técnica especializada em notebooks desde 2010. Conserto rápido com garantia e peças originais.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="servicos.html">Serviços</a></li>
+                        <li><a href="orcamento.html">Orçamento</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Rua da Tecnologia, 123 - Centro</p>
+                    <p><i class="fas fa-phone"></i> (45) 9999-9999</p>
+                    <p><i class="far fa-envelope"></i> contato@clinicadonotebook.com.br</p>
+                    <p><i class="far fa-clock"></i> Seg-Sex: 9h-18h | Sáb: 9h-13h</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> Clínica do Notebook. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Form submission
+        document.getElementById('estimateForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simulate form submission
+            alert('Orçamento solicitado com sucesso! Entraremos em contato em até 1 hora útil.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
