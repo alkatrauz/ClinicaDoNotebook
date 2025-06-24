@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 /* Reset e Variáveis */
 :root {
     --primary: #2c3e50;
     --secondary: #3498db;
-    --accent: #e74c3c;
+    --accent: #3c64e7;
     --light: #f8f9fa;
     --dark: #212529;
     --text: #333;
@@ -13,11 +15,17 @@
 * {
     margin: 0;
     padding: 0;
+    border: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+
     color: var(--text);
     line-height: 1.6;
     overflow-x: hidden;
@@ -39,6 +47,23 @@ a {
     text-decoration: none;
     color: inherit;
 }
+
+/* Scroll */
+body::-webkit-scrollbar-track {
+    background-color: #000000;
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+    background: #F4F4F4;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #9e9e9e;
+    border-radius: 10px 10px 10px 10px;
+}
+
+/* Scroll */
 
 /* Botões */
 .btn {
@@ -88,26 +113,74 @@ a {
     background-color: #e67e22;
 }
 
+/*
 /* Header */
-.main-header {
-    background-color: white;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+header {
+    background-color: var(--primary);
+    color: white;
+    padding: 1rem 0;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.header-content {
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 0;
-    position: relative;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
 }
 
 .logo img {
-    height: 50px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.logo span {
+    color: var(--secondary);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 2rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--secondary);
+}
+
+.mobile-menu {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
 /* Menu Mobile */
@@ -157,6 +230,8 @@ a {
     top: 8px;
 }
 
+*/
+
 /* Navegação */
 .main-nav ul {
     display: flex;
@@ -204,15 +279,23 @@ a {
 }
 
 /* Hero Section */
-.hero-section {
-    padding: 100px 0 60px;
-    background-color: var(--light);
-}
-
 .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     gap: 40px;
+}
+
+.hero-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding-top: 80px;
+    padding: 100px 0 60px;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
 }
 
 .hero-text {
@@ -245,7 +328,7 @@ a {
     flex: 1;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 /* Quick Services */
@@ -277,7 +360,7 @@ a {
 
 .quick-service-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .quick-service-item i {
@@ -302,13 +385,13 @@ a {
     background-color: white;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     transition: all 0.3s;
 }
 
 .service-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
 .service-card img {
@@ -397,7 +480,7 @@ a {
     background-color: white;
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
 .rating {
@@ -544,7 +627,7 @@ a {
 .social-links a {
     width: 40px;
     height: 40px;
-    background-color: rgba(255,255,255,0.1);
+    background-color: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -557,7 +640,7 @@ a {
     transform: translateY(-3px);
 }
 
-.footer-links h3, 
+.footer-links h3,
 .footer-contact h3 {
     font-size: 1.2rem;
     margin-bottom: 20px;
@@ -601,7 +684,7 @@ a {
     text-align: center;
     padding: 20px 0;
     margin-top: 40px;
-    border-top: 1px solid rgba(255,255,255,0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     font-size: 0.8rem;
     opacity: 0.7;
 }
@@ -620,14 +703,14 @@ a {
     align-items: center;
     justify-content: center;
     font-size: 1.8rem;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     z-index: 999;
     transition: all 0.3s;
 }
 
 .whatsapp-float:hover {
     transform: scale(1.1);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* Responsivo */
@@ -635,16 +718,16 @@ a {
     .hero-content {
         flex-direction: column;
     }
-    
+
     .hero-text {
         text-align: center;
         margin-bottom: 40px;
     }
-    
+
     .hero-buttons {
         justify-content: center;
     }
-    
+
     .quick-services-grid,
     .services-grid,
     .process-steps,
@@ -658,7 +741,7 @@ a {
     .hamburger {
         display: block;
     }
-    
+
     .main-nav {
         position: fixed;
         top: 0;
@@ -671,50 +754,50 @@ a {
         transition: right 0.3s;
         overflow-y: auto;
     }
-    
+
     .main-nav.active {
         right: 0;
     }
-    
+
     .main-nav ul {
         flex-direction: column;
     }
-    
+
     .main-nav li {
         margin: 0 0 20px 0;
     }
-    
+
     .nav-overlay {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0,0,0,0.5);
+        background-color: rgba(0, 0, 0, 0.5);
         z-index: 999;
         opacity: 0;
         visibility: hidden;
         transition: opacity 0.3s, visibility 0.3s;
     }
-    
+
     .nav-overlay.active {
         opacity: 1;
         visibility: visible;
     }
-    
+
     .emergency-banner {
         font-size: 0.9rem;
     }
-    
+
     .emergency-banner span {
         display: block;
         margin-bottom: 5px;
     }
-    
+
     .btn-emergency {
         margin-left: 0;
     }
-    
+
     .quick-services-grid,
     .services-grid,
     .process-steps,
@@ -728,15 +811,15 @@ a {
     .hero-text h1 {
         font-size: 2rem;
     }
-    
+
     .section-title {
         font-size: 1.5rem;
     }
-    
+
     .cta-buttons {
         flex-direction: column;
     }
-    
+
     .btn-call,
     .btn-whatsapp,
     .btn-email {

@@ -18,36 +18,27 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.classList.remove('no-scroll');
     });
     
-    // FAQ Accordion
-    const faqQuestions = document.querySelectorAll('.faq-question');
-    
-    faqQuestions.forEach(question => {
-        question.addEventListener('click', () => {
-            const faqItem = question.parentElement;
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
             
-            // Fecha todas as outras respostas
-            document.querySelectorAll('.faq-item').forEach(item => {
-                if (item !== faqItem) {
-                    item.classList.remove('active');
-                    item.querySelector('.faq-answer').style.maxHeight = '0';
-                    item.querySelector('.faq-icon').textContent = '+';
-                }
+            question.addEventListener('click', () => {
+                // Close all other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                        otherItem.querySelector('.faq-icon').textContent = '+';
+                    }
+                });
+                
+                // Toggle current item
+                item.classList.toggle('active');
+                const icon = item.querySelector('.faq-icon');
+                icon.textContent = item.classList.contains('active') ? '-' : '+';
             });
-            
-            // Alterna a resposta atual
-            faqItem.classList.toggle('active');
-            const answer = faqItem.querySelector('.faq-answer');
-            const icon = faqItem.querySelector('.faq-icon');
-            
-            if (faqItem.classList.contains('active')) {
-                answer.style.maxHeight = answer.scrollHeight + 'px';
-                icon.textContent = '-';
-            } else {
-                answer.style.maxHeight = '0';
-                icon.textContent = '+';
-            }
         });
-    });
     
     // Smooth Scrolling para links internos
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

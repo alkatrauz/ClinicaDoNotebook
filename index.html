@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clínica do Notebook | Assistência Técnica Especializada</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pop.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+<style>
+
+</style>
+
 <body>
     <!-- WhatsApp Float -->
     <a href="https://wa.me/5544999401025" class="whatsapp-float">
@@ -17,33 +23,30 @@
     </a>
 
     <!-- Header -->
-    <header class="main-header">
-        <div class="container header-content">
+    <header>
+        <div class="container header-container">
             <div class="logo">
-                <a href="index.html"><img src="assets/logo-clinica-notebook.png" alt="Clínica do Notebook"></a>
+                <img src="assets/logo-clinica-notebook.png" alt="Clínica do Notebook Logo">
+                <h1>Clínica do <span>Notebook</span></h1>
             </div>
-            
-            <button class="hamburger" id="hamburger" aria-label="Menu">
-                <span class="hamburger-box">
-                    <span class="hamburger-inner"></span>
-                </span>
-            </button>
-            
-            <div class="nav-overlay" id="navOverlay"></div>
-            
-            <nav class="main-nav" id="mainNav">
+
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+
+            <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="servicos.html">Serviços</a></li>
-                    <li><a href="orcamento.html">Orçamento</a></li>
-                    <li><a href="contato.html">Contato</a></li>
-                    <li><a href="tel:+5544999401025" class="cta-button"><i class="fas fa-phone"></i> Ligar</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#sobre">Sobre Nós</a></li>
+                    <li><a href="#depoimentos">Depoimentos</a></li>
+                    <li><a href="#contato">Contato</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Emergency Banner -->
+    <!-- Emergency Banner 
     <div class="emergency-banner">
         <div class="container">
             <i class="fas fa-bolt"></i>
@@ -52,6 +55,7 @@
         </div>
     </div>
 
+    -->
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="container hero-content">
@@ -66,7 +70,8 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="assets/tecnico-trabalhando.jpg" alt="Técnico trabalhando em notebook">
+                <img src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=150"
+                    alt="Técnico trabalhando em notebook">
             </div>
         </div>
     </section>
@@ -102,21 +107,24 @@
             <h2 class="section-title">Nossos Serviços</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <img src="assets/tela-quebrada.jpg" alt="Troca de Tela">
+                    <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                        alt="Troca de Tela">
                     <h3>Troca de Tela</h3>
                     <p class="price">A partir de <strong>R$ 299</strong></p>
                     <p class="time"><i class="far fa-clock"></i> 1-2 horas</p>
                     <a href="orcamento.html" class="btn-small">Solicitar Orçamento</a>
                 </div>
                 <div class="service-card">
-                    <img src="assets/limpeza.jpg" alt="Limpeza Interna">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                        alt="Limpeza Interna">
                     <h3>Limpeza Interna</h3>
                     <p class="price">A partir de <strong>R$ 149</strong></p>
                     <p class="time"><i class="far fa-clock"></i> 1 hora</p>
                     <a href="orcamento.html" class="btn-small">Solicitar Orçamento</a>
                 </div>
                 <div class="service-card">
-                    <img src="assets/virus.jpg" alt="Remoção de Vírus">
+                    <img src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                        alt="Remoção de Vírus">
                     <h3>Remoção de Vírus</h3>
                     <p class="price">A partir de <strong>R$ 199</strong></p>
                     <p class="time"><i class="far fa-clock"></i> 2-3 horas</p>
@@ -168,7 +176,8 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p class="testimonial-text">"Levei meu notebook que não ligava mais e em 2 horas estava pronto, com peça original e preço justo!"</p>
+                    <p class="testimonial-text">"Levei meu notebook que não ligava mais e em 2 horas estava pronto, com
+                        peça original e preço justo!"</p>
                     <p class="client-name">- Carlos Silva</p>
                 </div>
                 <div class="testimonial-card">
@@ -179,7 +188,8 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p class="testimonial-text">"Recuperaram todos os meus dados importantes e ainda fizeram uma limpeza completa. Recomendo!"</p>
+                    <p class="testimonial-text">"Recuperaram todos os meus dados importantes e ainda fizeram uma limpeza
+                        completa. Recomendo!"</p>
                     <p class="client-name">- Ana Oliveira</p>
                 </div>
             </div>
@@ -195,7 +205,8 @@
                     <span class="faq-icon">+</span>
                 </button>
                 <div class="faq-answer">
-                    <p>70% dos reparos são concluídos no mesmo dia. Casos mais complexos podem levar de 2 a 5 dias úteis, dependendo da peça necessária.</p>
+                    <p>70% dos reparos são concluídos no mesmo dia. Casos mais complexos podem levar de 2 a 5 dias
+                        úteis, dependendo da peça necessária.</p>
                 </div>
             </div>
             <div class="faq-item">
@@ -203,7 +214,8 @@
                     <span class="faq-icon">+</span>
                 </button>
                 <div class="faq-answer">
-                    <p>Sim, realizamos backup preventivo antes de qualquer procedimento. A recuperação de dados perdidos é um serviço adicional.</p>
+                    <p>Sim, realizamos backup preventivo antes de qualquer procedimento. A recuperação de dados perdidos
+                        é um serviço adicional.</p>
                 </div>
             </div>
             <div class="faq-item">
@@ -211,42 +223,28 @@
                     <span class="faq-icon">+</span>
                 </button>
                 <div class="faq-answer">
-                    <p>Todos os serviços têm garantia de 90 dias contra defeitos de mão de obra. Peças novas têm garantia do fabricante.</p>
+                    <p>Todos os serviços têm garantia de 90 dias contra defeitos de mão de obra. Peças novas têm
+                        garantia do fabricante.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <h2>Precisa de ajuda agora?</h2>
-            <p>Entre em contato por qualquer um dos nossos canais</p>
-            <div class="cta-buttons">
-                <a href="tel:+554599999999" class="btn-call">
-                    <i class="fas fa-phone"></i> Ligar
-                </a>
-                <a href="https://wa.me/554599999999" class="btn-whatsapp">
-                    <i class="fab fa-whatsapp"></i> WhatsApp
-                </a>
-                <a href="orcamento.html" class="btn-email">
-                    <i class="far fa-envelope"></i> Email
-                </a>
-            </div>
-        </div>
-    </section>
+
 
     <!-- Footer -->
     <footer class="main-footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-about">
-                    <img src="assets/logo-clinica-notebook-white.png" alt="Clínica do Notebook" class="footer-logo">
-                    <p>Assistência técnica especializada em notebooks desde 2010. Conserto rápido com garantia e peças originais.</p>
+                    <img src="assets/logo-clinica-notebook.pn" alt="Clínica do Notebook" class="footer-logo">
+                    <p>Assistência técnica especializada em notebooks desde 2010. Conserto rápido com garantia e peças
+                        originais.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/notebookcm/?locale=pt_BR"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/clinica_do_notebook/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/5544999401025"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
                 <div class="footer-links">
@@ -260,18 +258,19 @@
                 </div>
                 <div class="footer-contact">
                     <h3>Contato</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Rua da Tecnologia, 123 - Centro</p>
-                    <p><i class="fas fa-phone"></i> (45) 9999-9999</p>
-                    <p><i class="far fa-envelope"></i> contato@clinicadonotebook.com.br</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Rua Roberto Brzezinski, 1203 - Centro </p>
+                    <p><i class="fas fa-phone"></i> (44) 99940-1025</p>
+                    <p><i class="far fa-envelope"></i> clinicadontoebook@gmail.com</p>
                     <p><i class="far fa-clock"></i> Seg-Sex: 9h-18h | Sáb: 9h-13h</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 Clínica do Notebook. Todos os direitos reservados.</p>
+                <p>&copy; 2025 Clínica do Notebook. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
 
     <script src="js/script.js"></script>
 </body>
+
 </html>
