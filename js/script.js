@@ -1,24 +1,24 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Mobile Menu Toggle
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const mainNav = document.querySelector('.main-nav');
     const navOverlay = document.createElement('div');
     navOverlay.className = 'nav-overlay';
     document.body.appendChild(navOverlay);
-    
-    mobileMenuToggle.addEventListener('click', function() {
+
+    mobileMenuToggle.addEventListener('click', function () {
         this.classList.toggle('active');
         mainNav.classList.toggle('active');
         navOverlay.classList.toggle('active');
         document.body.classList.toggle('no-scroll');
-        
+
         if (this.classList.contains('active')) {
             this.innerHTML = '<i class="fas fa-times"></i>';
         } else {
             this.innerHTML = '<i class="fas fa-bars"></i>';
         }
     });
-    
+
     // Close menu when clicking on overlay or links
     navOverlay.addEventListener('click', closeMenu);
     document.querySelectorAll('.main-nav ul li a').forEach(link => {
@@ -48,24 +48,24 @@ document.addEventListener('DOMContentLoaded', function() {
     // Services Tabs
     const tabBtns = document.querySelectorAll('.tab-btn');
     const serviceCards = document.querySelectorAll('.service-card');
-    
+
     if (tabBtns.length > 0 && serviceCards.length > 0) {
         tabBtns.forEach(btn => {
-            btn.addEventListener('click', function() {
+            btn.addEventListener('click', function () {
                 // Remove active class from all buttons
                 tabBtns.forEach(btn => btn.classList.remove('active'));
-                
+
                 // Add active class to clicked button
                 this.classList.add('active');
-                
+
                 // Get data-tab value
                 const tabName = this.getAttribute('data-tab');
-                
+
                 // Hide all service cards
                 serviceCards.forEach(card => {
                     card.classList.remove('show');
                 });
-                
+
                 // Show only cards with matching data-tab
                 if (tabName === 'all') {
                     serviceCards.forEach(card => {
@@ -81,44 +81,64 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Testimonial slider
+    // Testimonial Slider
     const testimonials = document.querySelectorAll('.testimonial-card');
     const dotsContainer = document.querySelector('.slider-dots');
-    let currentTestimonialIndex = 0;
+    const prevBtn = document.querySelector('.slider-prev');
+    const nextBtn = document.querySelector('.slider-next');
+    let currentIndex = 0;
     let slideInterval;
 
-    if (testimonials.length > 1) {
-        // Create dots if not exists
-        if (!dotsContainer) {
-            const newDotsContainer = document.createElement('div');
-            newDotsContainer.className = 'slider-dots';
-            document.querySelector('.testimonials-slider').appendChild(newDotsContainer);
-            
-            testimonials.forEach((_, index) => {
-                const dot = document.createElement('div');
-                dot.classList.add('slider-dot');
-                if (index === 0) dot.classList.add('active');
-                dot.addEventListener('click', () => goToTestimonial(index));
-                newDotsContainer.appendChild(dot);
-            });
-        }
+    // Create dots
+    if (testimonials.length > 0) {
+        testimonials.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.classList.add('slider-dot');
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToTestimonial(index));
+            dotsContainer.appendChild(dot);
+        });
 
         const dots = document.querySelectorAll('.slider-dot');
 
         function goToTestimonial(index) {
-            testimonials[currentTestimonialIndex].classList.remove('active');
-            if (dots.length > 0) dots[currentTestimonialIndex].classList.remove('active');
-            
-            currentTestimonialIndex = index;
-            
-            testimonials[currentTestimonialIndex].classList.add('active');
-            if (dots.length > 0) dots[currentTestimonialIndex].classList.add('active');
+            testimonials[currentIndex].classList.remove('active');
+            dots[currentIndex].classList.remove('active');
+
+            currentIndex = index;
+
+            testimonials[currentIndex].classList.add('active');
+            dots[currentIndex].classList.add('active');
+
+            // Scroll to the testimonial
+            testimonials[currentIndex].scrollIntoView({
+                behavior: 'smooth',
+                block: 'nearest',
+                inline: 'center'
+            });
+        }
+
+        // Navigation buttons
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                const prevIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+                goToTestimonial(prevIndex);
+                resetInterval();
+            });
+        }
+
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                const nextIndex = (currentIndex + 1) % testimonials.length;
+                goToTestimonial(nextIndex);
+                resetInterval();
+            });
         }
 
         // Auto slide
         function startInterval() {
             slideInterval = setInterval(() => {
-                const nextIndex = (currentTestimonialIndex + 1) % testimonials.length;
+                const nextIndex = (currentIndex + 1) % testimonials.length;
                 goToTestimonial(nextIndex);
             }, 5000);
         }
@@ -135,8 +155,11 @@ document.addEventListener('DOMContentLoaded', function() {
             slider.addEventListener('mouseleave', startInterval);
         }
 
+        // Initialize
+        testimonials[0].classList.add('active');
         startInterval();
     }
+    // Testimonial Slider
 
     // FAQ Accordion
     const faqItems = document.querySelectorAll('.faq-item');
@@ -165,22 +188,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Smooth Scrolling for internal links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            
+
             const targetId = this.getAttribute('href');
             if (targetId === '#') return;
-            
+
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
                 window.scrollTo({
                     top: targetElement.offsetTop - 80,
                     behavior: 'smooth'
                 });
-                
+
                 // Update URL without reload
                 history.pushState(null, null, targetId);
-                
+
                 closeMenu();
             }
         });
@@ -196,39 +219,39 @@ document.addEventListener('DOMContentLoaded', function() {
     // Form validation for contact page
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             // Simple validation
             const name = contactForm.querySelector('#name');
             const email = contactForm.querySelector('#email');
             const phone = contactForm.querySelector('#phone');
             const message = contactForm.querySelector('#message');
             let isValid = true;
-            
+
             // Reset errors
             contactForm.querySelectorAll('.error').forEach(el => el.remove());
-            
+
             if (name.value.trim() === '') {
                 isValid = false;
                 showError(name, 'Por favor, insira seu nome');
             }
-            
+
             if (email.value.trim() === '' || !email.value.includes('@')) {
                 isValid = false;
                 showError(email, 'Por favor, insira um e-mail válido');
             }
-            
+
             if (phone.value.trim() === '') {
                 isValid = false;
                 showError(phone, 'Por favor, insira seu telefone');
             }
-            
+
             if (message.value.trim() === '') {
                 isValid = false;
                 showError(message, 'Por favor, insira sua mensagem');
             }
-            
+
             if (isValid) {
                 // Simulate form submission
                 contactForm.innerHTML = `
@@ -240,7 +263,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 `;
             }
         });
-        
+
         function showError(input, message) {
             const error = document.createElement('small');
             error.className = 'error';
@@ -252,26 +275,26 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Animation on Scroll
-    const animateOnScroll = function() {
+    const animateOnScroll = function () {
         const elements = document.querySelectorAll('.service-card, .quick-service-item, .step, .testimonial-card');
-        
+
         elements.forEach(element => {
             const elementPosition = element.getBoundingClientRect().top;
             const screenPosition = window.innerHeight / 1.3;
-            
+
             if (elementPosition < screenPosition) {
                 element.classList.add('animated');
             }
         });
     };
-    
+
     window.addEventListener('scroll', animateOnScroll);
     animateOnScroll(); // Run once on page load
 
     // WhatsApp button click event
     const whatsappBtn = document.querySelector('.whatsapp-float');
     if (whatsappBtn) {
-        whatsappBtn.addEventListener('click', function(e) {
+        whatsappBtn.addEventListener('click', function (e) {
             // You can add tracking here
             console.log('WhatsApp button clicked');
         });

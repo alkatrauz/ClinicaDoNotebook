@@ -438,3 +438,25 @@
     }
 }
 /* Footer */
+
+/* Testimonials */
+@media (max-width: 992px) {
+    .testimonial-card {
+        flex: 0 0 calc(50% - 15px);
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonials-section {
+        padding: 60px 0;
+    }
+    
+    .testimonial-card {
+        flex: 0 0 85%;
+    }
+    
+    .slider-controls {
+        margin-bottom: 30px;
+    }
+}
+/* Testimonials */
