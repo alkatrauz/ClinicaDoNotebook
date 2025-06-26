@@ -201,15 +201,15 @@
         flex-direction: column;
         text-align: center;
     }
-    
+
     .hero-text {
         margin-bottom: 50px;
     }
-    
+
     .hero-buttons {
         justify-content: center;
     }
-    
+
     .hero-features {
         justify-content: center;
     }
@@ -219,19 +219,19 @@
     section {
         padding: 60px 0;
     }
-    
+
     .section-title {
         font-size: 2rem;
     }
-    
+
     .header-cta {
         display: none;
     }
-    
+
     .mobile-menu-toggle {
         display: block;
     }
-    
+
     .main-nav {
         position: fixed;
         top: 80px;
@@ -242,38 +242,38 @@
         transition: var(--transition);
         z-index: 999;
     }
-    
+
     .main-nav.active {
         left: 0;
     }
-    
+
     .main-nav ul {
         flex-direction: column;
         padding: 20px;
     }
-    
+
     .main-nav ul li {
         margin: 10px 0;
     }
-    
+
     .emergency-content {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .emergency-icon {
         margin-right: 0;
         margin-bottom: 15px;
     }
-    
+
     .emergency-text {
         margin-bottom: 15px;
     }
-    
+
     .process-steps {
         grid-template-columns: 1fr;
     }
-    
+
     .footer-grid {
         grid-template-columns: 1fr;
     }
@@ -283,40 +283,77 @@
     .hero-banner {
         padding: 150px 0 80px;
     }
-    
+
     .hero-text h1 {
         font-size: 2.2rem;
     }
-    
+
     .hero-text h2 {
         font-size: 1.2rem;
     }
-    
+
     .hero-buttons {
         flex-direction: column;
     }
-    
+
     .quick-services-grid {
         grid-template-columns: 1fr 1fr;
     }
-    
+
     .services-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .cta-content h2 {
         font-size: 1.8rem;
     }
-    
+
     .cta-buttons {
         flex-direction: column;
     }
-    
+
     .whatsapp-float {
         width: 50px;
         height: 50px;
         font-size: 1.5rem;
         bottom: 20px;
         right: 20px;
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .service-image {
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .services-tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .tab-btn {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .service-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .btn-small, .btn-link {
+        width: 100%;
+        text-align: center;
     }
 }
