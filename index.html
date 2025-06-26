@@ -7,10 +7,12 @@
     <title>Clínica do Notebook | Assistência Técnica Especializada</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/pop.css">
+    <link rel="stylesheet" href="css/media.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <style>
 
@@ -21,23 +23,41 @@
     <a href="https://wa.me/5544999401025" class="whatsapp-float">
         <i class="fab fa-whatsapp"></i>
     </a>
+    <!-- WhatsApp Float -->
 
     <!-- Header -->
-    <header>
-        <div class="container header-container">
-            <div class="logo">
-                <img src="assets/logo-clinica-notebook.png" alt="Clínica do Notebook Logo">
-                <h1>Clínica do <span>Notebook</span></h1>
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="assets/logo.png" alt="Clínica do Notebook">
+                    <div class="logo-text">
+                        <h1>Clínica do <span>Notebook</span></h1>
+                        <p>Assistência Técnica Especializada em Notebooks</p>
+                    </div>
+                </div>
+
+                <div class="header-cta">
+                    <div class="header-contact">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <span>Atendimento</span>
+                            <strong>(44) 99940-1025</strong>
+                        </div>
+                    </div>
+                    <a href="#orcamento" class="btn btn-primary">Orçamento Online</a>
+                </div>
+
+                <button class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
 
-            <div class="mobile-menu">
-                <i class="fas fa-bars"></i>
-            </div>
-
-            <nav>
+            <nav class="main-nav">
                 <ul>
-                    <li><a href="#home">Home</a></li>
+                    <li><a href="#home" class="active">Home</a></li>
                     <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#marcas">Marcas</a></li>
                     <li><a href="#sobre">Sobre Nós</a></li>
                     <li><a href="#depoimentos">Depoimentos</a></li>
                     <li><a href="#contato">Contato</a></li>
@@ -45,190 +65,350 @@
             </nav>
         </div>
     </header>
+    <!-- Header -->
 
-    <!-- Emergency Banner 
-    <div class="emergency-banner">
+    <!-- Hero Banner -->
+    <section class="hero-banner" id="home">
         <div class="container">
-            <i class="fas fa-bolt"></i>
-            <span>EMERGÊNCIA? Conserto em até 2 horas para problemas críticos!</span>
-            <a href="tel:+554599999999" class="btn-emergency">Ligue Agora!</a>
-        </div>
-    </div>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h2>Soluções completas para seu notebook</h2>
+                    <h1>Assistência Técnica <span>Especializada em Notebooks</span></h1>
+                    <p>Conserto rápido com garantia de 90 dias e peças originais</p>
 
-    -->
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container hero-content">
-            <div class="hero-text">
-                <h1>Assistência Técnica <span>Especializada em Notebooks</span></h1>
-                <p>Conserto rápido, garantido e com peças originais. <strong>Diagnóstico grátis!</strong></p>
-                <div class="hero-buttons">
-                    <a href="orcamento.html" class="btn-primary">Orçamento Online</a>
-                    <a href="https://wa.me/554599999999" class="btn-whatsapp">
-                        <i class="fab fa-whatsapp"></i> WhatsApp
-                    </a>
+                    <div class="hero-buttons">
+                        <a href="#orcamento" class="btn btn-primary btn-large">
+                            <i class="fas fa-wrench"></i> Orçamento Online
+                        </a>
+                        <a href="https://wa.me/5544999401025" class="btn btn-whatsapp btn-large">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                    </div>
+
+                    <div class="hero-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Diagnóstico Grátis</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Conserto em até 2h</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Peças Originais</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=150"
-                    alt="Técnico trabalhando em notebook">
+
+                <div class="hero-image">
+                    <img src="assets/hero-notebook.avif" alt="Técnico trabalhando em notebook">
+                </div>
             </div>
         </div>
     </section>
+    <!-- Hero Banner -->
 
     <!-- Quick Services -->
     <section class="quick-services">
         <div class="container">
             <h2 class="section-title">Problemas com seu notebook?</h2>
+            <p class="section-subtitle">Selecione abaixo o serviço que você precisa</p>
+
             <div class="quick-services-grid">
-                <a href="servicos.html#tela" class="quick-service-item">
-                    <i class="fas fa-tv"></i>
-                    <span>Tela Quebrada</span>
+                <a href="#tela" class="quick-service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-tv"></i>
+                    </div>
+                    <h3>Tela Quebrada</h3>
+                    <p>Troca rápida com tela original</p>
                 </a>
-                <a href="servicos.html#virus" class="quick-service-item">
-                    <i class="fas fa-bug"></i>
-                    <span>Remoção de Vírus</span>
+
+                <a href="#bateria" class="quick-service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-battery-quarter"></i>
+                    </div>
+                    <h3>Bateria Arruinada</h3>
+                    <p>Substituição com garantia</p>
                 </a>
-                <a href="servicos.html#dados" class="quick-service-item">
-                    <i class="fas fa-database"></i>
-                    <span>Recuperação de Dados</span>
+
+                <a href="#virus" class="quick-service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-bug"></i>
+                    </div>
+                    <h3>Remoção de Vírus</h3>
+                    <p>Limpeza completa do sistema</p>
                 </a>
-                <a href="servicos.html#lento" class="quick-service-item">
-                    <i class="fas fa-tachometer-alt"></i>
-                    <span>Notebook Lento</span>
+
+                <a href="#lento" class="quick-service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3>Notebook Lento</h3>
+                    <p>Otimização e upgrade</p>
+                </a>
+
+                <a href="#teclado" class="quick-service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-keyboard"></i>
+                    </div>
+                    <h3>Problema no Teclado</h3>
+                    <p>Reparo ou substituição</p>
+                </a>
+
+                <a href="#dados" class="quick-service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Recuperação de Dados</h3>
+                    <p>Resgate seus arquivos</p>
                 </a>
             </div>
         </div>
     </section>
+    <!-- Quick Services -->
 
     <!-- Services Section -->
-    <section class="services-section">
+    <section class="services-section" id="servicos">
         <div class="container">
-            <h2 class="section-title">Nossos Serviços</h2>
+            <div class="section-header">
+                <h2 class="section-title">Nossos Serviços</h2>
+                <p class="section-subtitle">Soluções completas para todas as marcas de notebooks</p>
+            </div>
+
+            <div class="services-tabs">
+                <button class="tab-btn active" data-tab="hardware">Hardware</button>
+                <button class="tab-btn" data-tab="software">Software</button>
+                <button class="tab-btn" data-tab="preventivo">Preventivo</button>
+            </div>
+
             <div class="services-grid">
+                <!-- Hardware Services -->
+                <div class="service-card hardware show">
+                    <div class="service-image">
+                        <img src="assets/servicos/troca-tela.avif" alt="Troca de Tela">
+                        <span class="service-badge">Mais Procurado</span>
+                    </div>
+                    <div class="service-info">
+                        <h3>Troca de Tela</h3>
+                        <div class="service-meta">
+                            <span class="price">A partir de <strong>R$ 299</strong></span>
+                            <span class="time"><i class="far fa-clock"></i> 1-2 horas</span>
+                        </div>
+                        <p>Substituição da tela quebrada ou com defeito por peça original ou equivalente de qualidade.
+                        </p>
+                        <div class="service-actions">
+                            <a href="#orcamento" class="btn btn-small">Orçamento</a>
+                            <a href="#detalhes" class="btn-link">Detalhes <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
                 <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-                        alt="Troca de Tela">
-                    <h3>Troca de Tela</h3>
-                    <p class="price">A partir de <strong>R$ 299</strong></p>
-                    <p class="time"><i class="far fa-clock"></i> 1-2 horas</p>
-                    <a href="orcamento.html" class="btn-small">Solicitar Orçamento</a>
+                    <img src="assets/servicos/troca-tela.avif" alt="Troca de Tela">
+                    <div class="service-content">
+                        <h3>Troca de Tela</h3>
+                        <p class="price">A partir de <strong>R$ 299</strong></p>
+                        <p class="time"><i class="far fa-clock"></i> 1-2 horas</p>
+                        <a href="orcamento.html" class="btn-small">Solicitar Orçamento</a>
+                    </div>
                 </div>
                 <div class="service-card">
                     <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
                         alt="Limpeza Interna">
-                    <h3>Limpeza Interna</h3>
-                    <p class="price">A partir de <strong>R$ 149</strong></p>
-                    <p class="time"><i class="far fa-clock"></i> 1 hora</p>
-                    <a href="orcamento.html" class="btn-small">Solicitar Orçamento</a>
+                    <div class="service-content">
+                        <h3>Limpeza Interna</h3>
+                        <p class="price">A partir de <strong>R$ 149</strong></p>
+                        <p class="time"><i class="far fa-clock"></i> 1 hora</p>
+                        <a href="orcamento.html" class="btn-small">Solicitar Orçamento</a>
+                    </div>
                 </div>
                 <div class="service-card">
                     <img src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
                         alt="Remoção de Vírus">
-                    <h3>Remoção de Vírus</h3>
-                    <p class="price">A partir de <strong>R$ 199</strong></p>
-                    <p class="time"><i class="far fa-clock"></i> 2-3 horas</p>
-                    <a href="orcamento.html" class="btn-small">Solicitar Orçamento</a>
+                    <div class="service-content">
+                        <h3>Remoção de Vírus</h3>
+                        <p class="price">A partir de <strong>R$ 199</strong></p>
+                        <p class="time"><i class="far fa-clock"></i> 2-3 horas</p>
+                        <a href="orcamento.html" class="btn-small">Solicitar Orçamento</a>
+                    </div>
                 </div>
+                <!-- Mais serviços aqui... -->
+            </div>
+
+            <div class="section-cta">
+                <a href="#servicos" class="btn btn-outline">Ver Todos os Serviços</a>
             </div>
         </div>
     </section>
+    <!-- Services Section -->
 
     <!-- Process Section -->
     <section class="process-section">
         <div class="container">
-            <h2 class="section-title">Como Funciona</h2>
+            <div class="section-header">
+                <h2 class="section-title">Como funciona nosso serviço</h2>
+                <p class="section-subtitle">Rápido, simples e transparente</p>
+            </div>
+
             <div class="process-steps">
                 <div class="step">
                     <div class="step-number">1</div>
+                    <div class="step-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
                     <h3>Diagnóstico Grátis</h3>
                     <p>Analisamos seu notebook em até 1 hora sem custo</p>
                 </div>
+
                 <div class="step">
                     <div class="step-number">2</div>
+                    <div class="step-icon">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
                     <h3>Orçamento Aprovado</h3>
                     <p>Enviaremos um orçamento detalhado para sua aprovação</p>
                 </div>
+
                 <div class="step">
                     <div class="step-number">3</div>
+                    <div class="step-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
                     <h3>Reparo Rápido</h3>
                     <p>70% dos consertos são concluídos no mesmo dia</p>
                 </div>
+
                 <div class="step">
                     <div class="step-number">4</div>
+                    <div class="step-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
                     <h3>Testes e Garantia</h3>
                     <p>Testes rigorosos e 90 dias de garantia</p>
                 </div>
             </div>
         </div>
     </section>
+    <!-- Process Section -->
 
-    <!-- Testimonials -->
-    <section class="testimonials-section">
+    <!-- Brands Section -->
+    <section class="brands-section" id="marcas">
         <div class="container">
-            <h2 class="section-title">O que nossos clientes dizem</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-text">"Levei meu notebook que não ligava mais e em 2 horas estava pronto, com
-                        peça original e preço justo!"</p>
-                    <p class="client-name">- Carlos Silva</p>
+            <h2 class="section-title">Atendemos todas as marcas</h2>
+            <p class="section-subtitle">Especialistas nas principais marcas do mercado</p>
+
+            <div class="brands-grid">
+                <div class="brand-item">
+                    <img src="assets/marcas/dell-logo.svg" alt="Dell">
                 </div>
-                <div class="testimonial-card">
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-text">"Recuperaram todos os meus dados importantes e ainda fizeram uma limpeza
-                        completa. Recomendo!"</p>
-                    <p class="client-name">- Ana Oliveira</p>
+                <div class="brand-item">
+                    <img src="assets/marcas/lenovo-logo.svg" alt="Lenovo">
+                </div>
+                <div class="brand-item">
+                    <img src="assets/marcas/hp-logo.svg" alt="HP">
+                </div>
+                <div class="brand-item">
+                    <img src="assets/marcas/acer-logo.svg" alt="Acer">
+                </div>
+                <div class="brand-item">
+                    <img src="assets/marcas/asus-logo.svg" alt="Asus">
+                </div>
+                <div class="brand-item">
+                    <img src="assets/marcas/apple-logo-2.svg" alt="Apple">
                 </div>
             </div>
         </div>
     </section>
+    <!-- Brands Section -->
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section" id="depoimentos">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">O que nossos clientes dizem</h2>
+                <p class="section-subtitle">Avaliações reais de clientes satisfeitos</p>
+            </div>
+
+            <div class="testimonials-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="client-avatar">
+                            <img src="assets/clientes/cliente1.jpg" alt="Carlos Silva">
+                        </div>
+                        <div class="client-info">
+                            <h4>Carlos Silva</h4>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-body">
+                        <p>"Levei meu notebook que não ligava mais e em 2 horas estava pronto, com peça original e preço
+                            justo! O
+                            atendimento foi excelente e o técnico explicou tudo detalhadamente."</p>
+                    </div>
+                    <div class="testimonial-footer">
+                        <span class="verification"><i class="fas fa-check-circle"></i> Cliente verificado</span>
+                        <span class="date">15/05/2023</span>
+                    </div>
+                </div>
+
+                <!-- Mais depoimentos aqui... -->
+            </div>
+
+            <div class="google-reviews">
+                <div class="google-badge">
+                    <img src="assets/google-logo.png" alt="Google">
+                    <div class="rating">
+                        <span>4.9</span>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <small>Baseado em 127 avaliações</small>
+                    </div>
+                </div>
+                <a href="#" class="btn btn-outline">Ver todas avaliações</a>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonials Section -->
 
     <!-- FAQ Section -->
     <section class="faq-section">
         <div class="container">
-            <h2 class="section-title">Perguntas Frequentes</h2>
-            <div class="faq-item">
-                <button class="faq-question">Quanto tempo demora um conserto?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>70% dos reparos são concluídos no mesmo dia. Casos mais complexos podem levar de 2 a 5 dias
-                        úteis, dependendo da peça necessária.</p>
-                </div>
+            <div class="section-header">
+                <h2 class="section-title">Perguntas Frequentes</h2>
+                <p class="section-subtitle">Tire suas dúvidas sobre nossos serviços</p>
             </div>
-            <div class="faq-item">
-                <button class="faq-question">Vocês fazem backup dos meus dados?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Sim, realizamos backup preventivo antes de qualquer procedimento. A recuperação de dados perdidos
-                        é um serviço adicional.</p>
+
+            <div class="faq-accordion">
+                <div class="faq-item active">
+                    <div class="faq-question">
+                        <h3>Quanto tempo demora um conserto?</h3>
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>70% dos reparos são concluídos no mesmo dia. Casos mais complexos podem levar de 2 a 5 dias
+                            úteis,
+                            dependendo da necessidade de peças específicas. Para serviços de emergência, oferecemos
+                            conserto em até 2
+                            horas para problemas críticos.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question">Tem garantia no serviço?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Todos os serviços têm garantia de 90 dias contra defeitos de mão de obra. Peças novas têm
-                        garantia do fabricante.</p>
-                </div>
+
+                <!-- Mais perguntas aqui... -->
             </div>
         </div>
     </section>
+    <!-- FAQ Section -->
 
 
 
@@ -236,10 +416,14 @@
     <footer class="main-footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-about">
-                    <img src="assets/logo-clinica-notebook.pn" alt="Clínica do Notebook" class="footer-logo">
-                    <p>Assistência técnica especializada em notebooks desde 2010. Conserto rápido com garantia e peças
-                        originais.</p>
+                <div class="footer-col footer-about">
+                    <div class="footer-logo">
+                        <img src="assets/logo.png" alt="Clínica do Notebook">
+                        <h3>Clínica do <span>Notebook</span></h3>
+                    </div>
+                    <p>Assistência técnica especializada em notebooks desde 2007. Oferecemos conserto rápido com
+                        garantia e peças
+                        originais para todas as marcas.</p>
                     <div class="social-links">
                         <a href="https://www.facebook.com/notebookcm/?locale=pt_BR"><i
                                 class="fab fa-facebook-f"></i></a>
@@ -247,28 +431,73 @@
                         <a href="https://wa.me/5544999401025"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
-                <div class="footer-links">
+
+                <div class="footer-col footer-links">
                     <h3>Links Rápidos</h3>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="servicos.html">Serviços</a></li>
-                        <li><a href="orcamento.html">Orçamento</a></li>
-                        <li><a href="contato.html">Contato</a></li>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#servicos">Serviços</a></li>
+                        <li><a href="#marcas">Marcas Atendidas</a></li>
+                        <li><a href="#sobre">Sobre Nós</a></li>
+                        <li><a href="#depoimentos">Depoimentos</a></li>
+                        <li><a href="#contato">Contato</a></li>
                     </ul>
                 </div>
-                <div class="footer-contact">
+
+                <div class="footer-col footer-services">
+                    <h3>Nossos Serviços</h3>
+                    <ul>
+                        <li><a href="#troca-tela">Troca de Tela</a></li>
+                        <li><a href="#bateria">Troca de Bateria</a></li>
+                        <li><a href="#teclado">Reparo no Teclado</a></li>
+                        <li><a href="#limpeza">Limpeza Interna</a></li>
+                        <li><a href="#virus">Remoção de Vírus</a></li>
+                        <li><a href="#dados">Recuperação de Dados</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col footer-contact">
                     <h3>Contato</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Rua Roberto Brzezinski, 1203 - Centro </p>
-                    <p><i class="fas fa-phone"></i> (44) 99940-1025</p>
-                    <p><i class="far fa-envelope"></i> clinicadontoebook@gmail.com</p>
-                    <p><i class="far fa-clock"></i> Seg-Sex: 9h-18h | Sáb: 9h-13h</p>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Rua Roberto Brzezinski, 1203 - Centro, Campo Mourão/PR</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <span>(44) 99940-1025</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>contato@clinicadonotebook.com.br</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Seg-Sex: 9h às 18h | Sáb: 9h às 12h</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
+
             <div class="footer-bottom">
-                <p>&copy; 2025 Clínica do Notebook. Todos os direitos reservados.</p>
+                <div class="payment-methods">
+                    <span>Formas de pagamento:</span>
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-discover"></i>
+                    <i class="fas fa-barcode"></i>
+                    <i class="fas fa-money-bill-wave"></i>
+                    <i class="fas fa-pix"></i>
+                </div>
+
+                <div class="copyright">
+                    <p>&copy; 2025 Clínica do Notebook. Todos os direitos reservados. CNPJ: 1</p>
+                </div>
             </div>
         </div>
     </footer>
+    <!-- Footer -->
 
     <script src="js/script.js"></script>
 </body>

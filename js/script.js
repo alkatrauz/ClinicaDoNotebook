@@ -1,133 +1,124 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
     // Mobile Menu Toggle
-    const mobileMenu = document.querySelector('.mobile-menu');
-    const nav = document.querySelector('nav');
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const mainNav = document.querySelector('.main-nav');
     const navOverlay = document.createElement('div');
     navOverlay.className = 'nav-overlay';
     document.body.appendChild(navOverlay);
-
-    mobileMenu.addEventListener('click', () => {
-        nav.classList.toggle('active');
+    
+    mobileMenuToggle.addEventListener('click', function() {
+        this.classList.toggle('active');
+        mainNav.classList.toggle('active');
         navOverlay.classList.toggle('active');
-        mobileMenu.innerHTML = nav.classList.contains('active') ? 
-            '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        document.body.classList.toggle('no-scroll');
+        
+        if (this.classList.contains('active')) {
+            this.innerHTML = '<i class="fas fa-times"></i>';
+        } else {
+            this.innerHTML = '<i class="fas fa-bars"></i>';
+        }
     });
-
+    
     // Close menu when clicking on overlay or links
     navOverlay.addEventListener('click', closeMenu);
-    document.querySelectorAll('nav ul li a').forEach(link => {
+    document.querySelectorAll('.main-nav ul li a').forEach(link => {
         link.addEventListener('click', closeMenu);
     });
 
     function closeMenu() {
-        nav.classList.remove('active');
+        mobileMenuToggle.classList.remove('active');
+        mainNav.classList.remove('active');
         navOverlay.classList.remove('active');
-        mobileMenu.innerHTML = '<i class="fas fa-bars"></i>';
+        document.body.classList.remove('no-scroll');
+        mobileMenuToggle.innerHTML = '<i class="fas fa-bars"></i>';
     }
 
     // Header scroll effect
-    window.addEventListener('scroll', () => {
-        const header = document.querySelector('header');
-        if (window.scrollY > 50) {
-            header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
-        } else {
-            header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-        }
-    });
-
-    // Animated counter for stats
-    const statCards = document.querySelectorAll('.stat-card h3');
-    const statsSection = document.querySelector('.stats');
-
-    function animateCounters() {
-        const rect = statsSection.getBoundingClientRect();
-        const isVisible = (rect.top <= window.innerHeight * 0.75) && 
-                          (rect.bottom >= window.innerHeight * 0.25);
-        
-        if (isVisible) {
-            statCards.forEach(card => {
-                const target = parseInt(card.getAttribute('data-count'));
-                const duration = 2000;
-                const step = target / (duration / 16);
-                let current = 0;
-                
-                const counter = setInterval(() => {
-                    current += step;
-                    if (current >= target) {
-                        clearInterval(counter);
-                        card.textContent = target;
-                    } else {
-                        card.textContent = Math.floor(current);
-                    }
-                }, 16);
-                
-                card.removeAttribute('data-count');
-            });
-            
-            observer.disconnect();
-        }
+    const header = document.querySelector('.main-header');
+    if (header) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            }
+        });
     }
 
-    const observer = new IntersectionObserver(animateCounters, {
-        threshold: 0.5
-    });
-
-    if (statsSection) {
-        observer.observe(statsSection);
+    // Services Tabs
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const serviceCards = document.querySelectorAll('.service-card');
+    
+    if (tabBtns.length > 0 && serviceCards.length > 0) {
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active class from all buttons
+                tabBtns.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                // Get data-tab value
+                const tabName = this.getAttribute('data-tab');
+                
+                // Hide all service cards
+                serviceCards.forEach(card => {
+                    card.classList.remove('show');
+                });
+                
+                // Show only cards with matching data-tab
+                if (tabName === 'all') {
+                    serviceCards.forEach(card => {
+                        card.classList.add('show');
+                    });
+                } else {
+                    const filteredCards = document.querySelectorAll(`.service-card.${tabName}`);
+                    filteredCards.forEach(card => {
+                        card.classList.add('show');
+                    });
+                }
+            });
+        });
     }
 
     // Testimonial slider
     const testimonials = document.querySelectorAll('.testimonial-card');
     const dotsContainer = document.querySelector('.slider-dots');
-    let currentIndex = 0;
+    let currentTestimonialIndex = 0;
     let slideInterval;
 
-    if (testimonials.length > 0 && dotsContainer) {
-        // Create dots
-        testimonials.forEach((_, index) => {
-            const dot = document.createElement('div');
-            dot.classList.add('slider-dot');
-            if (index === 0) dot.classList.add('active');
-            dot.addEventListener('click', () => goToTestimonial(index));
-            dotsContainer.appendChild(dot);
-        });
+    if (testimonials.length > 1) {
+        // Create dots if not exists
+        if (!dotsContainer) {
+            const newDotsContainer = document.createElement('div');
+            newDotsContainer.className = 'slider-dots';
+            document.querySelector('.testimonials-slider').appendChild(newDotsContainer);
+            
+            testimonials.forEach((_, index) => {
+                const dot = document.createElement('div');
+                dot.classList.add('slider-dot');
+                if (index === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => goToTestimonial(index));
+                newDotsContainer.appendChild(dot);
+            });
+        }
 
         const dots = document.querySelectorAll('.slider-dot');
 
         function goToTestimonial(index) {
-            testimonials[currentIndex].classList.remove('active');
-            dots[currentIndex].classList.remove('active');
+            testimonials[currentTestimonialIndex].classList.remove('active');
+            if (dots.length > 0) dots[currentTestimonialIndex].classList.remove('active');
             
-            currentIndex = index;
+            currentTestimonialIndex = index;
             
-            testimonials[currentIndex].classList.add('active');
-            dots[currentIndex].classList.add('active');
-        }
-
-        // Navigation buttons
-        const prevBtn = document.querySelector('.slider-prev');
-        const nextBtn = document.querySelector('.slider-next');
-
-        if (prevBtn) {
-            prevBtn.addEventListener('click', () => {
-                const prevIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
-                goToTestimonial(prevIndex);
-                resetInterval();
-            });
-        }
-
-        if (nextBtn) {
-            nextBtn.addEventListener('click', () => {
-                const nextIndex = (currentIndex + 1) % testimonials.length;
-                goToTestimonial(nextIndex);
-                resetInterval();
-            });
+            testimonials[currentTestimonialIndex].classList.add('active');
+            if (dots.length > 0) dots[currentTestimonialIndex].classList.add('active');
         }
 
         // Auto slide
         function startInterval() {
             slideInterval = setInterval(() => {
-                const nextIndex = (currentIndex + 1) % testimonials.length;
+                const nextIndex = (currentTestimonialIndex + 1) % testimonials.length;
                 goToTestimonial(nextIndex);
             }, 5000);
         }
@@ -152,20 +143,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
     faqItems.forEach(item => {
         const question = item.querySelector('.faq-question');
+        const icon = item.querySelector('.faq-icon');
 
         question.addEventListener('click', () => {
             // Close all other items
             faqItems.forEach(otherItem => {
                 if (otherItem !== item) {
                     otherItem.classList.remove('active');
-                    otherItem.querySelector('.faq-icon').textContent = '+';
+                    const otherIcon = otherItem.querySelector('.faq-icon');
+                    if (otherIcon) otherIcon.textContent = '+';
                 }
             });
 
             // Toggle current item
             item.classList.toggle('active');
-            const icon = item.querySelector('.faq-icon');
-            icon.textContent = item.classList.contains('active') ? '-' : '+';
+            if (icon) {
+                icon.textContent = item.classList.contains('active') ? '-' : '+';
+            }
         });
     });
 
@@ -180,9 +174,12 @@ document.addEventListener('DOMContentLoaded', function () {
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
                 window.scrollTo({
-                    top: targetElement.offsetTop - 100,
+                    top: targetElement.offsetTop - 80,
                     behavior: 'smooth'
                 });
+                
+                // Update URL without reload
+                history.pushState(null, null, targetId);
                 
                 closeMenu();
             }
@@ -190,9 +187,10 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Update year in footer
-    const footerYear = document.querySelector('.footer-bottom p');
+    const footerYear = document.querySelector('.copyright p');
     if (footerYear) {
-        footerYear.innerHTML = `&copy; ${new Date().getFullYear()} Clínica do Notebook. Todos os direitos reservados.`;
+        const currentYear = new Date().getFullYear();
+        footerYear.innerHTML = footerYear.innerHTML.replace('2023', currentYear);
     }
 
     // Form validation for contact page
@@ -204,28 +202,31 @@ document.addEventListener('DOMContentLoaded', function () {
             // Simple validation
             const name = contactForm.querySelector('#name');
             const email = contactForm.querySelector('#email');
+            const phone = contactForm.querySelector('#phone');
             const message = contactForm.querySelector('#message');
             let isValid = true;
             
+            // Reset errors
+            contactForm.querySelectorAll('.error').forEach(el => el.remove());
+            
             if (name.value.trim() === '') {
                 isValid = false;
-                name.style.borderColor = 'var(--accent)';
-            } else {
-                name.style.borderColor = '';
+                showError(name, 'Por favor, insira seu nome');
             }
             
             if (email.value.trim() === '' || !email.value.includes('@')) {
                 isValid = false;
-                email.style.borderColor = 'var(--accent)';
-            } else {
-                email.style.borderColor = '';
+                showError(email, 'Por favor, insira um e-mail válido');
+            }
+            
+            if (phone.value.trim() === '') {
+                isValid = false;
+                showError(phone, 'Por favor, insira seu telefone');
             }
             
             if (message.value.trim() === '') {
                 isValid = false;
-                message.style.borderColor = 'var(--accent)';
-            } else {
-                message.style.borderColor = '';
+                showError(message, 'Por favor, insira sua mensagem');
             }
             
             if (isValid) {
@@ -238,6 +239,41 @@ document.addEventListener('DOMContentLoaded', function () {
                     </div>
                 `;
             }
+        });
+        
+        function showError(input, message) {
+            const error = document.createElement('small');
+            error.className = 'error';
+            error.style.color = 'var(--danger-color)';
+            error.textContent = message;
+            input.parentNode.appendChild(error);
+            input.style.borderColor = 'var(--danger-color)';
+        }
+    }
+
+    // Animation on Scroll
+    const animateOnScroll = function() {
+        const elements = document.querySelectorAll('.service-card, .quick-service-item, .step, .testimonial-card');
+        
+        elements.forEach(element => {
+            const elementPosition = element.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.3;
+            
+            if (elementPosition < screenPosition) {
+                element.classList.add('animated');
+            }
+        });
+    };
+    
+    window.addEventListener('scroll', animateOnScroll);
+    animateOnScroll(); // Run once on page load
+
+    // WhatsApp button click event
+    const whatsappBtn = document.querySelector('.whatsapp-float');
+    if (whatsappBtn) {
+        whatsappBtn.addEventListener('click', function(e) {
+            // You can add tracking here
+            console.log('WhatsApp button clicked');
         });
     }
 });
