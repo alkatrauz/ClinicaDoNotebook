@@ -1323,10 +1323,13 @@ section {
 /* CTA Section */
 
 /* Footer */
+/* Footer Estilizado com Cores Harmonizadas */
 .main-footer {
-    background-color: #222;
-    color: var(--white-color);
-    padding: 80px 0 0;
+    background-color: #0a192f; /* Cor igual ao header */
+    color: #ffffff;
+    padding: 70px 0 0;
+    position: relative;
+    border-top: 4px solid #00a8ff; /* Destaque em azul claro */
 }
 
 .footer-grid {
@@ -1341,6 +1344,7 @@ section {
     margin-bottom: 25px;
     position: relative;
     padding-bottom: 10px;
+    color: #ffffff;
 }
 
 .footer-col h3::after {
@@ -1350,7 +1354,7 @@ section {
     left: 0;
     width: 50px;
     height: 2px;
-    background-color: var(--primary-color);
+    background-color: #00a8ff; /* Azul claro para combinar */
 }
 
 .footer-logo {
@@ -1360,28 +1364,24 @@ section {
 }
 
 .footer-logo img {
-    height: 40px;
-    margin-right: 10px;
+    height: 50px;
+    margin-right: 15px;
 }
 
 .footer-logo h3 {
     font-size: 1.5rem;
     margin: 0;
-    padding: 0;
+    color: #ffffff;
 }
 
-.footer-logo h3::after {
-    display: none;
-}
-
-.footer-logo span {
-    color: var(--primary-color);
+.footer-logo h3 span {
+    color: #00a8ff; /* Azul claro para destaque */
 }
 
 .footer-about p {
-    opacity: 0.8;
-    margin-bottom: 20px;
-    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 25px;
+    line-height: 1.7;
 }
 
 .social-links {
@@ -1395,101 +1395,98 @@ section {
     justify-content: center;
     width: 40px;
     height: 40px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(0, 168, 255, 0.1);
     border-radius: 50%;
-    color: var(--white-color);
-    transition: var(--transition);
+    color: #ffffff;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
 }
 
 .social-links a:hover {
-    background-color: var(--primary-color);
+    background-color: #00a8ff;
     transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 168, 255, 0.3);
 }
 
-.footer-links ul,
-.footer-services ul {
+.footer-col ul {
     list-style: none;
+    padding: 0;
 }
 
-.footer-links ul li,
-.footer-services ul li {
-    margin-bottom: 12px;
+.footer-col ul li {
+    margin-bottom: 15px;
 }
 
-.footer-links ul li a,
-.footer-services ul li a {
+.footer-col ul li a {
     color: rgba(255, 255, 255, 0.8);
-    text-decoration: none;
-    transition: var(--transition);
-    font-size: 0.95rem;
-    display: block;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.footer-links ul li a:hover,
-.footer-services ul li a:hover {
-    color: var(--primary-color);
+.footer-col ul li a:hover {
+    color: #00a8ff;
     padding-left: 5px;
 }
 
-.contact-info {
-    list-style: none;
+.footer-col ul li a i {
+    font-size: 0.8rem;
+    color: #00a8ff;
 }
 
 .contact-info li {
     display: flex;
-    margin-bottom: 15px;
     align-items: flex-start;
+    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
 }
 
 .contact-info i {
+    color: #00a8ff;
     margin-right: 15px;
-    color: var(--primary-color);
-    font-size: 1.1rem;
     margin-top: 3px;
-}
-
-.contact-info span {
-    opacity: 0.8;
-    font-size: 0.95rem;
-    line-height: 1.5;
+    font-size: 1.1rem;
 }
 
 .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 20px 0;
+    padding-top: 25px;
     text-align: center;
 }
 
 .payment-methods {
     margin-bottom: 20px;
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     gap: 15px;
 }
 
 .payment-methods span {
     margin-right: 10px;
-    opacity: 0.8;
-    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .payment-methods i {
     font-size: 1.5rem;
-    opacity: 0.8;
-    transition: var(--transition);
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
+    margin: 0 5px;
 }
 
 .payment-methods i:hover {
-    opacity: 1;
-    color: var(--primary-color);
+    color: #00a8ff;
 }
 
 .copyright p {
+    color: rgba(255, 255, 255, 0.6);
     font-size: 0.9rem;
-    opacity: 0.7;
+    margin: 0;
 }
+
 
 /* Footer */
 

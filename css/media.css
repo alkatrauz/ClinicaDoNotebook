@@ -402,3 +402,39 @@
         bottom: 0;
     }
 }
+
+/* Footer */
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .footer-col h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .footer-logo {
+        justify-content: center;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+    
+    .footer-col ul li a {
+        justify-content: center;
+    }
+    
+    .contact-info li {
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .payment-methods {
+        flex-direction: column;
+    }
+}
+/* Footer */
