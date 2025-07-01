@@ -82,64 +82,86 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Testimonial Slider
+    // Testimonial Slider
+    const testimonialsContainer = document.querySelector('.testimonials-slider');
     const testimonials = document.querySelectorAll('.testimonial-card');
     const dotsContainer = document.querySelector('.slider-dots');
     const prevBtn = document.querySelector('.slider-prev');
     const nextBtn = document.querySelector('.slider-next');
     let currentIndex = 0;
     let slideInterval;
+    let isUserInteracting = false;
 
-    // Create dots
     if (testimonials.length > 0) {
+        // Create dots
         testimonials.forEach((_, index) => {
             const dot = document.createElement('div');
             dot.classList.add('slider-dot');
             if (index === 0) dot.classList.add('active');
-            dot.addEventListener('click', () => goToTestimonial(index));
+            dot.addEventListener('click', () => {
+                isUserInteracting = true;
+                goToTestimonial(index);
+                resetInterval();
+            });
             dotsContainer.appendChild(dot);
         });
 
         const dots = document.querySelectorAll('.slider-dot');
 
+        // Ativa o testimonial atual
+        function activateTestimonial(index) {
+            testimonials.forEach((testimonial, i) => {
+                if (i === index) {
+                    testimonial.classList.add('active');
+                    dots[i].classList.add('active');
+                } else {
+                    testimonial.classList.remove('active');
+                    dots[i].classList.remove('active');
+                }
+            });
+        }
+
+        // Navega para um testimonial específico
         function goToTestimonial(index) {
-            testimonials[currentIndex].classList.remove('active');
-            dots[currentIndex].classList.remove('active');
-
             currentIndex = index;
+            activateTestimonial(currentIndex);
 
-            testimonials[currentIndex].classList.add('active');
-            dots[currentIndex].classList.add('active');
-
-            // Scroll to the testimonial
-            testimonials[currentIndex].scrollIntoView({
-                behavior: 'smooth',
-                block: 'nearest',
-                inline: 'center'
-            });
+            if (isUserInteracting) {
+                testimonials[currentIndex].scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'nearest',
+                    inline: 'center'
+                });
+            }
         }
 
-        // Navigation buttons
-        if (prevBtn) {
-            prevBtn.addEventListener('click', () => {
-                const prevIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
-                goToTestimonial(prevIndex);
-                resetInterval();
-            });
+        // Navegação pelos botões
+        function navigate(direction) {
+            isUserInteracting = true;
+            let newIndex;
+
+            if (direction === 'prev') {
+                newIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+            } else {
+                newIndex = (currentIndex + 1) % testimonials.length;
+            }
+
+            goToTestimonial(newIndex);
+            resetInterval();
         }
 
-        if (nextBtn) {
-            nextBtn.addEventListener('click', () => {
-                const nextIndex = (currentIndex + 1) % testimonials.length;
-                goToTestimonial(nextIndex);
-                resetInterval();
-            });
-        }
+        // Event listeners para os botões
+        if (prevBtn) prevBtn.addEventListener('click', () => navigate('prev'));
+        if (nextBtn) nextBtn.addEventListener('click', () => navigate('next'));
 
         // Auto slide
         function startInterval() {
             slideInterval = setInterval(() => {
-                const nextIndex = (currentIndex + 1) % testimonials.length;
-                goToTestimonial(nextIndex);
+                if (!document.hidden && isElementInViewport(testimonialsContainer)) {
+                    isUserInteracting = false;
+                    const nextIndex = (currentIndex + 1) % testimonials.length;
+                    goToTestimonial(nextIndex);
+                }
             }, 5000);
         }
 
@@ -148,15 +170,33 @@ document.addEventListener('DOMContentLoaded', function () {
             startInterval();
         }
 
-        // Pause on hover
-        const slider = document.querySelector('.testimonials-slider');
-        if (slider) {
-            slider.addEventListener('mouseenter', () => clearInterval(slideInterval));
-            slider.addEventListener('mouseleave', startInterval);
+        // Verifica se o elemento está visível
+        function isElementInViewport(el) {
+            if (!el) return false;
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.bottom >= 0
+            );
         }
 
-        // Initialize
-        testimonials[0].classList.add('active');
+        // Pausa quando o mouse está sobre o slider
+        if (testimonialsContainer) {
+            testimonialsContainer.addEventListener('mouseenter', () => clearInterval(slideInterval));
+            testimonialsContainer.addEventListener('mouseleave', startInterval);
+        }
+
+        // Pausa quando a aba não está ativa
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                clearInterval(slideInterval);
+            } else {
+                resetInterval();
+            }
+        });
+
+        // Inicialização
+        activateTestimonial(0);
         startInterval();
     }
     // Testimonial Slider

@@ -1164,8 +1164,9 @@ section {
 }
 
 .testimonials-slider {
+    position: relative;
     display: flex;
-    gap: 30px;
+    gap: 20px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
@@ -1179,15 +1180,20 @@ section {
 }
 
 .testimonial-card {
-    flex: 0 0 calc(33.333% - 20px);
+    flex: 0 0 calc(50% - 20px);
     scroll-snap-align: start;
     background: white;
     border-radius: 15px;
     padding: 30px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease;
     opacity: 0.9;
     transform: scale(0.95);
+}
+
+.testimonial-card.active {
+    opacity: 1;
+    transform: scale(1);
 }
 
 .testimonial-card:hover {
